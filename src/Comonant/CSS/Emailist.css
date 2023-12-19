@@ -1,0 +1,132 @@
+.email {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.emailsetting {
+    display: flex !important;
+    align-items: center;
+    position: static;
+    top: 0;
+    justify-content: space-between;
+    border: 1px solid whitesmoke;
+}
+
+.emailsetting svg {
+    font-size: 18px;
+}
+
+.emailist_settingright {
+    display: flex;
+    align-items: center;
+}
+
+.emailist_settingright p {
+    font-size: 13px;
+}
+
+.emailtype {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.emailtype>.emailtype_options {
+    display: flex;
+    align-items: center;
+    min-width: 150px;
+    padding: 0 10px;
+    cursor: pointer;
+
+}
+
+.emailtype>.emailtype_options svg {
+    font-size: 20px;
+    color: gray;
+    margin-right: 10px;
+}
+
+.emailtype>.emailtype_options p {
+    font-size: 15px;
+}
+
+.emailtype>.emailtype_options:hover {
+    background-color: whitesmoke;
+}
+
+.emailtype_options--active p,
+.emailtype_options--active svg {
+    color: #d93025 !important;
+    font-weight: bold;
+}
+
+.emailtype_options--active {
+    border-bottom: 3px solid #d93025 !important;
+}
+
+.emailbody {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+    padding: 0px 10px;
+    height: 40px;
+}
+
+.emailbody:hover {
+    box-shadow: 2px 2px 4px whitesmoke;
+    cursor: pointer;
+}
+
+.emailbody .emailbody_left {
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+    flex: 30%;
+}
+
+.emailbody .emailbody_left svg {
+    font-size: 18px;
+    color: gray;
+    margin-right: 10px;
+}
+
+.emailbody .emailbody_left h4 {
+    font-size: 14px;
+    flex: none;
+}
+
+.emailbody .emailbody_middle {
+    display: flex;
+    align-items: center;
+    flex: 90%;
+
+}
+.emailbody_middle .emailbody_middle_msg{
+    display: flex;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.emailbody .emailbody_middle p {
+    font-size: 14px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 20px;
+    max-width: 700px;
+}
+
+.emailbody .emailbody_right {
+    display: flex;
+    align-items: center;
+    flex: 10%;
+    justify-content: flex-end;
+}
+
+.emailbody .emailbody_right p {
+    font-size: 12px;
+}
+
+.emailbody .emailbody_middle p {
+    font-size: 14px;
+}
