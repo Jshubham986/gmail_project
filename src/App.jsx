@@ -9,11 +9,17 @@ import Compose from './Comonant/Compose';
 import { useSelector } from 'react-redux';
 import { selectSendMessageIsOpen } from './Store/mailslice';
 import ParentComponent from './Comonant/ParentComponant';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Emaildetails from './Comonant/Emaildetails';
+import Login from './Comonant/Login';
+import { selectUser } from './Store/userslice';
 
 function App() {
 
-const isopen = useSelector(selectSendMessageIsOpen)
-console.log(isopen)
+  const isopen = useSelector(selectSendMessageIsOpen)
+  console.log(isopen)
+  const user = useSelector(selectUser);
+  console.log(user)
   return (
     <>
       {/* <BrowserRouter>
@@ -23,15 +29,32 @@ console.log(isopen)
           <></>
         </Routes>
       </BrowserRouter> */}
+      {
+        user && (
+          <>
 
-      <Header/>
-      <div className='app_body'>
-        <Sidebar/>
-        <Emailist/>
-      </div>
-      {isopen && <Compose/>}
-      
-      
+            <BrowserRouter>
+              <Routes>
+            <Header />
+            <Sidebar />
+                <div className='app_body'>
+
+                  <Route path='/' element={<Emailist />} />
+                  <Route path='/mail' element={<Emaildetails />} />
+                </div >
+                {isopen && <Compose />
+                }
+              </Routes>
+            </BrowserRouter>
+          </>
+        )
+      } {
+        <Login />
+      }
+
+
+
+
     </>
   )
 }

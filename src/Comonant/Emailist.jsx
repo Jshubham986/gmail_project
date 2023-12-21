@@ -9,7 +9,7 @@ function Emailist() {
 
   const [email, setEmail] = useState([])
   useEffect(() => {
-    db.collection("Emails").onSnapshot(snapshot => {
+    db.collection("Emails").orderBy("createdAt", "desc").onSnapshot(snapshot => {
       setEmail(snapshot.docs.map((doc => ({
         id: doc.id,
         data: doc.data(),
